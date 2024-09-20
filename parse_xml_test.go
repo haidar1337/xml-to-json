@@ -170,7 +170,7 @@ func TestSomething(t *testing.T) {
 
 	for name, tc := range tests {
 		t.Run(name, func(t *testing.T) {
-			actual, err := MapXML(tc.Input)
+			actual, err := ParseXML(tc.Input)
 			if err != nil && tc.ErrorContains == "" {
 				t.Errorf("Test **%s** FAIL: unexpected error: %v", name, err)
 				return
